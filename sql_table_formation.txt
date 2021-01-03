@@ -1,0 +1,16 @@
+CREATE TABLE user_info
+( id INT PRIMARY KEY AUTO_INCREMENT, 
+Name VARCHAR(20), 
+Gender VARCHAR(2), 
+Age INT, 
+Phone_no INT);
+
+
+
+CREATE TABLE seats(id INT PRIMARY KEY AUTO_INCREMENT,
+Row_no INT,
+Coloumn_no INT,
+booked_status ENUM('S','B') DEFAULT 'S',
+Price INT,
+user_id INT NOT NULL,
+FOREIGN KEY(user_id) REFERENCES user_info(id));
